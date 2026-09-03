@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gollapalli Sathiraju | CSE Student & Aspiring Software Developer</title>
+
+    <meta name="description"
+          content="Portfolio of Gollapalli Sathiraju - B.Tech Computer Science Engineering student, aspiring software developer, web developer and IoT enthusiast.">
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #050816;
+            --bg2: #0a1024;
+            --card: rgba(15, 23, 42, 0.72);
+            --border: rgba(148, 163, 184, 0.16);
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --primary: #38bdf8;
+            --secondary: #8b5cf6;
+            --success: #22c55e;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(56,189,248,0.12), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(139,92,246,0.12), transparent 30%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: clamp(30px, 5vw, 46px);
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 12px auto 0;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(5, 8, 22, 0.78);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid rgba(56,189,248,0.3);
+            background: rgba(56,189,248,0.08);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero h3 {
+            font-size: clamp(18px, 2vw, 25px);
+            color: #cbd5e1;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 680px;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-card {
+            height: 380px;
+            border-radius: 25px;
+            background:
+                linear-gradient(145deg, rgba(56,189,248,0.1), rgba(139,92,246,0.1)),
+                var(--card);
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            border: 2px solid rgba(56,189,248,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            box-shadow:
+                0 0 40px rgba(56,189,248,0.18),
+                inset 0 0 40px rgba(139,92,246,0.1);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06);
+            }
+        }
+
+        .floating {
+            position: absolute;
+            padding: 8px 14px;
+            border-radius: 8px;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid var(--border);
+            color: #cbd5e1;
+            font-size: 12px;
+        }
+
+        .f1 { top: 30px; left: 25px; }
+        .f2 { right: 25px; top: 80px; }
+        .f3 { bottom: 35px; left: 40px; }
+        .f4 { bottom: 65px; right: 30px; }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .glass-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .glass-card h3 {
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .glass-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(56,189,248,0.4);
+        }
+
+        .skill-card .icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 5px 9px;
+            border-radius: 6px;
+            background: rgba(56,189,248,0.08);
+            color: #bae6fd;
+            border: 1px solid rgba(56,189,248,0.12);
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .project-number {
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .project h3 {
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .project h4 {
+            color: #cbd5e1;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .project ul {
+            margin: 18px 0;
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           INTERESTS
+        ========================= */
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .interest {
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 15px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .interest:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest .emoji {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .interest h3 {
+            font-size: 15px;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(56,189,248,0.25);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 20px rgba(56,189,248,0.5);
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary);
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        .score {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: rgba(34,197,94,0.08);
+            color: #86efac;
+            font-size: 13px;
+            border: 1px solid rgba(34,197,94,0.15);
+        }
+
+        /* =========================
+           JOURNEY
+        ========================= */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .process-item {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .process-item .num {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: auto auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            font-weight: bold;
+        }
+
+        .process-item h3 {
+            font-size: 16px;
+        }
+
+        .process-item p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 60px 30px;
+        }
+
+        .contact-box h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--primary);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                height: 300px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(5,8,22,0.98);
+                border-bottom: 1px solid var(--border);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 14px 5%;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .contact-box h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#home" class="logo">
+                SATHIRAJU<span>.</span>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="home">
+
+    <div class="container hero">
+
+        <div>
+
+            <div class="badge">
+                🚀 B.Tech CSE Student | Aspiring Software Developer
+            </div>
+
+            <h1>
+                Hi, I'm
+                <span class="gradient-text">
+                    Sathiraju
+                </span>
+            </h1>
+
+            <h3>
+                Computer Science Engineering • Web Development • IoT • Application Development
+            </h3>
+
+            <p>
+                I’m Gollapalli Sathiraju, a 2nd-year B.Tech Computer Science
+                Engineering student at Lovely Professional University.
+                I’m passionate about programming, web development, IoT and
+                application development, and I enjoy turning ideas into
+                practical projects.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects →
+                </a>
+
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-circle">
+                💻
+            </div>
+
+            <div class="floating f1">
+                C / C++
+            </div>
+
+            <div class="floating f2">
+                Python
+            </div>
+
+            <div class="floating f3">
+                IoT
+            </div>
+
+            <div class="floating f4">
+                Web Dev
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>About Me</span>
+            <h2>Who I Am</h2>
+            <p>
+                A Computer Science Engineering student focused on programming,
+                software development, web technologies and IoT.
+            </p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="glass-card">
+
+                <h3>👋 About Me</h3>
+
+                <p>
+                    Hi, I'm <strong>Gollapalli Sathiraju</strong>, a Computer
+                    Science Engineering student from Andhra Pradesh, currently
+                    pursuing my B.Tech at <strong>Lovely Professional University</strong>.
+                </p>
+
+                <br>
+
+                <p>
+                    I have a foundation in C, C++, Python, Java, HTML, CSS and
+                    JavaScript, along with hands-on experience in Arduino,
+                    ESP8266, ESP32 and IoT-based systems.
+                </p>
+
+                <br>
+
+                <p>
+                    I enjoy learning new technologies, solving programming
+                    problems and developing projects that connect software
+                    with real-world applications.
+                </p>
+
+            </div>
+
+
+            <div class="glass-card">
+
+                <h3>⚡ My Approach</h3>
+
+                <p>
+                    My approach to learning technology is simple:
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Learn</span>
+                    <span class="tag">Build</span>
+                    <span class="tag">Experiment</span>
+                    <span class="tag">Improve</span>
+
+                </div>
+
+                <br>
+
+                <h3>💡 My Strengths</h3>
+
+                <div class="tags">
+
+                    <span class="tag">Quick Learner</span>
+                    <span class="tag">Problem Solver</span>
+                    <span class="tag">Self-Motivated</span>
+                    <span class="tag">Adaptable</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Communication</span>
+                    <span class="tag">Time Management</span>
+                    <span class="tag">Willingness to Learn</span>
+                    <span class="tag">Hands-on Projects</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Academic Journey</span>
+
+            <h2>Education</h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Lovely Professional University</h3>
+
+                <h4>B.Tech — Computer Science & Engineering (Core)</h4>
+
+                <p>
+                    2025 – 2029 | Currently: 2nd Year
+                </p>
+
+                <span class="score">
+                    1st Year CGPA: 7.76 / 10
+                </span>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Sri Chaitanya Junior College</h3>
+
+                <h4>Intermediate — 12th Grade</h4>
+
+                <p>
+                    Andhra Pradesh State Board · 2025
+                </p>
+
+                <span class="score">
+                    Percentage: 93.2%
+                </span>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Sri Chaitanya School</h3>
+
+                <h4>10th Grade</h4>
+
+                <p>
+                    Andhra Pradesh State Board · 2023
+                </p>
+
+                <span class="score">
+                    Percentage: 88.33%
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Skills</span>
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                Technologies and tools I use while learning and building projects.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="icon">💻</div>
+
+                <h3>Programming</h3>
+
+                <p>
+                    C, C++, Python and Java.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">🌐</div>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Building responsive and interactive websites.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">🔌</div>
+
+                <h3>IoT & Embedded</h3>
+
+                <p>
+                    Working with microcontrollers, sensors and connected systems.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Arduino UNO</span>
+                    <span class="tag">ESP8266</span>
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Sensors</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">🛠️</div>
+
+                <h3>Tools & Platforms</h3>
+
+                <p>
+                    Development, design and database tools.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Arduino IDE</span>
+                    <span class="tag">AutoCAD</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">MySQL / DBMS</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Work</span>
+
+            <h2>Featured Projects</h2>
+
+            <p>
+                Projects where I apply programming, IoT and web development
+                concepts to practical problems.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>IoT-Based Artificial Growth System</h3>
+
+                <h4>
+                    Conservation of Taxus wallichiana
+                </h4>
+
+                <p>
+                    An IoT-based plant monitoring and artificial growth system
+                    designed to support the conservation and growth of
+                    <i>Taxus wallichiana</i>.
+                </p>
+
+                <ul>
+                    <li>Temperature monitoring</li>
+                    <li>Humidity monitoring</li>
+                    <li>Soil moisture monitoring</li>
+                    <li>Light intensity detection</li>
+                    <li>Wi-Fi-based monitoring</li>
+                    <li>Automated environmental control</li>
+                    <li>Real-time sensor data</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Arduino UNO</span>
+                    <span class="tag">ESP8266</span>
+                    <span class="tag">DHT22</span>
+                    <span class="tag">LDR</span>
+                    <span class="tag">Soil Moisture</span>
+                    <span class="tag">Relay</span>
+                    <span class="tag">IoT</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>IoT / ECE Project</h3>
+
+                <h4>
+                    Sensor-Based Connected System
+                </h4>
+
+                <p>
+                    A practical IoT-based project focused on using sensors,
+                    microcontrollers and connected technology to monitor
+                    environmental conditions and create a useful real-world
+                    solution.
+                </p>
+
+                <ul>
+                    <li>Sensor data collection</li>
+                    <li>Microcontroller programming</li>
+                    <li>Environmental monitoring</li>
+                    <li>Hardware interfacing</li>
+                    <li>Connected IoT system</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">ESP8266</span>
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Sensors</span>
+                    <span class="tag">IoT</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>Portfolio Website</h3>
+
+                <h4>
+                    Responsive Personal Portfolio
+                </h4>
+
+                <p>
+                    A responsive personal portfolio website created to
+                    showcase my education, technical skills, projects,
+                    certifications, learning journey and contact information.
+                </p>
+
+                <ul>
+                    <li>Responsive design</li>
+                    <li>Interactive navigation</li>
+                    <li>Project showcase</li>
+                    <li>Education timeline</li>
+                    <li>Contact section</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTERESTS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Explore</span>
+
+            <h2>Areas of Interest</h2>
+
+        </div>
+
+
+        <div class="interest-grid">
+
+            <div class="interest">
+                <div class="emoji">🌐</div>
+                <h3>Internet of Things</h3>
+            </div>
+
+            <div class="interest">
+                <div class="emoji">💻</div>
+                <h3>Web Development</h3>
+            </div>
+
+            <div class="interest">
+                <div class="emoji">📱</div>
+                <h3>Application Development</h3>
+            </div>
+
+            <div class="interest">
+                <div class="emoji">⚙️</div>
+                <h3>Software Development</h3>
+            </div>
+
+            <div class="interest">
+                <div class="emoji">🧩</div>
+                <h3>Problem Solving</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Achievements</span>
+
+            <h2>Certifications & Learning</h2>
+
+            <p>
+                Courses, certifications and learning experiences that support
+                my technical growth.
+            </p>
+
+        </div>
+
+
+        <div class="glass-card">
+
+            <div class="tags">
+
+                <span class="tag">Google Cloud Platform Certification</span>
+                <span class="tag">Skill India MOOC</span>
+                <span class="tag">Infosys Cybersecurity Course</span>
+                <span class="tag">AI / Technology Learning & Workshops</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CURRENTLY LEARNING
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Learning</span>
+
+            <h2>Currently Learning</h2>
+
+        </div>
+
+
+        <div class="glass-card">
+
+            <div class="tags">
+
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
+                <span class="tag">Data Structures & Algorithms</span>
+                <span class="tag">HTML & CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Git & GitHub</span>
+                <span class="tag">IoT Development</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">ESP8266</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">Application Development</span>
+                <span class="tag">Web Development</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LEARNING JOURNEY
+========================= -->
+
+<section id="journey">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>My Learning Journey</span>
+
+            <h2>Now → Next → Future → Goal</h2>
+
+            <p>
+                A roadmap for building stronger programming and software
+                development skills.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div class="process-item">
+
+                <div class="num">01</div>
+
+                <h3>NOW</h3>
+
+                <p>
+                    Strengthen fundamentals:
+                    C, C++, Python, HTML, CSS, JavaScript and DSA.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="num">02</div>
+
+                <h3>NEXT</h3>
+
+                <p>
+                    Build better applications with JavaScript,
+                    backend development, APIs, databases and Git/GitHub.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="num">03</div>
+
+                <h3>FUTURE</h3>
+
+                <p>
+                    Full-stack development with React, Node.js,
+                    MySQL, IoT, ESP32 and AI-integrated projects.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="num">04</div>
+
+                <h3>GOAL</h3>
+
+                <p>
+                    Become industry ready through internships,
+                    hackathons, open source, projects and placements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CAREER GOAL
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            <div class="section-title" style="margin-bottom:20px;">
+
+                <span>Future Goal</span>
+
+                <h2>Full Stack Web Developer & Software Engineer</h2>
+
+            </div>
+
+            <p style="text-align:center;color:#94a3b8;max-width:850px;margin:auto;">
+
+                My goal is to become a skilled Full Stack Web Developer and
+                Software Engineer with strong programming and problem-solving
+                abilities.
+
+                I want to gain practical experience through projects,
+                internships, hackathons, coding practice and continuous learning.
+                In the future, I want to combine software development, web
+                technologies, IoT and emerging technologies to build meaningful
+                solutions for real-world problems.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHAT I WANT TO BUILD
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            <div class="section-title" style="margin-bottom:20px;">
+
+                <span>Vision</span>
+
+                <h2>What I Want to Build</h2>
+
+            </div>
+
+            <p style="text-align:center;color:#94a3b8;max-width:850px;margin:auto;">
+
+                I want to create projects that combine
+                <strong>software + hardware + intelligent technology</strong>.
+                My long-term interest is in developing practical applications
+                using web development, IoT, AI and software engineering.
+
+            </p>
+
+            <div class="tags" style="justify-content:center;">
+
+                <span class="tag">Web Development</span>
+                <span class="tag">IoT</span>
+                <span class="tag">AI</span>
+                <span class="tag">Software Engineering</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Let's Connect 🚀</h2>
+
+            <p>
+                Open to projects, internships, hackathons, collaborations,
+                coding opportunities and continuous learning.
+            </p>
+
+
+            <div class="hero-buttons" style="justify-content:center;">
+
+                <a href="mailto:sathirajugollapalli70@gmail.com"
+                   class="btn btn-primary">
+                    Email Me
+                </a>
+
+                <a href="https://github.com/sathirajugollapalli"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com/in/sathiraju-gollapalli-b03b08379/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+                    LinkedIn
+                </a>
+
+                <a href="https://leetcode.com/u/6346lHfN0n/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+                    LeetCode
+                </a>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+                    👤 Gollapalli Sathiraju
+                </div>
+
+                <div class="contact-item">
+                    📍 Andhra Pradesh, India
+                </div>
+
+                <div class="contact-item">
+                    🎓 Lovely Professional University
+                </div>
+
+                <div class="contact-item">
+                    💻 B.Tech CSE
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 <span>Gollapalli Sathiraju</span>
+        · CSE Student · Software Developer · IoT Enthusiast · Learner
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
+    }
+
+
+    // Close mobile menu after clicking a link
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+    // Scroll reveal animation
+
+    const observer = new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+    document
+        .querySelectorAll(
+            ".glass-card, .skill-card, .project, .interest, .timeline-item, .process-item"
+        )
+        .forEach(element => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(25px)";
+            element.style.transition = "all 0.7s ease";
+
+            observer.observe(element);
+
+        });
+
+</script>
+
+</body>
+</html>
